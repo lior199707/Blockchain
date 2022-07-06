@@ -24,7 +24,6 @@ class ConnectionPool:
         :param writer: asyncio StreamWriter object, responsible for writing to an underlying connection
         :return:
         """
-        # telnet 127.0.0.1 8888
         message = dedent(f"""
         \r=== 
         \rWelcome {writer.nickname}!
@@ -160,3 +159,10 @@ async def main():
 connection_pool = ConnectionPool()
 asyncio.run(main())
 # telnet 127.0.0.1 8888
+
+# protocol of the blockchain network:
+# As a node, I’m able to connect to peers by discovering them.
+# As a connected node, I’m able to publish a list of my peers to anyone requesting them.
+# As a connected node, I’m able to accept and broadcast a new transaction from a peer.
+# As a connected node, I’m able to server the contents of a block to any peer requesting it.
+# As a connected node, I’m able to accept a new block and add it to my blockchain if it meets certain criteria.
